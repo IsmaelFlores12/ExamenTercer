@@ -12,9 +12,40 @@ namespace ExamenTercer
 {
     public partial class Inicio : Form
     {
+        Acciones Acciones = new Acciones();
         public Inicio()
         {
             InitializeComponent();
+        }
+
+        private void BTNmostrar_Click(object sender, EventArgs e)
+        {
+            DGdatos.DataSource=null;
+            DGdatos.DataSource = Acciones.mostrar();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (Acciones.eliminarP(Convert.ToInt32(tbxEliminar.Text))) 
+                MessageBox.Show("Eliminada con exito");
+            else
+                MessageBox.Show("Fallo");
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            if (Acciones.insertar(tbxColor.Text, Convert.ToInt32(tbxID), tbxNombre.Text, Convert.ToDateTime(tbxFecha), Convert.ToBoolean(tbxNombre.Text)))
+                MessageBox.Show("Agregado con exito");
+            else
+                MessageBox.Show("Fallo");
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            if (Acciones.actualizar(tbxColor.Text, Convert.ToInt32(tbxID), tbxNombre.Text, Convert.ToDateTime(tbxFecha), Convert.ToBoolean(tbxNombre.Text)))
+                MessageBox.Show("Actualizado con exito");
+            else
+                MessageBox.Show("Fallo");
         }
     }
 }
