@@ -34,7 +34,7 @@ namespace ExamenTercer
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            if (Acciones.insertar(tbxColor.Text, Convert.ToInt32(tbxID), tbxNombre.Text, Convert.ToDateTime(tbxFecha.Text), Convert.ToBoolean(tbxActivo.Text)))
+            if (Acciones.insertar(tbxColor.Text, Convert.ToInt32(tbxID.Text), tbxNombre.Text, Convert.ToDateTime(tbxFecha.Text), Convert.ToBoolean(tbxActivo.Text)))
                 MessageBox.Show("Agregado con exito");
             else
                 MessageBox.Show("Fallo");
@@ -42,7 +42,7 @@ namespace ExamenTercer
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            if (Acciones.actualizar(tbxColor.Text, Convert.ToInt32(tbxID), tbxNombre.Text, Convert.ToDateTime(tbxFecha.Text), Convert.ToBoolean(tbxActivo.Text)))
+            if (Acciones.actualizar(tbxColor.Text, Convert.ToInt32(tbxID.Text), tbxNombre.Text, Convert.ToDateTime(tbxFecha.Text), Convert.ToBoolean(tbxActivo.Text)))
                 MessageBox.Show("Actualizado con exito");
             else
                 MessageBox.Show("Fallo");
